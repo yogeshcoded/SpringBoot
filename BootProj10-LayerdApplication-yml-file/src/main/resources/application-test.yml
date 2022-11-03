@@ -1,0 +1,15 @@
+##DataSource Config
+spring: 
+ datasource: 
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql:///student
+   username: root
+   password: 1234
+
+c3p0: 
+  minsize: 10
+  maxsize: 100
+
+
+
+

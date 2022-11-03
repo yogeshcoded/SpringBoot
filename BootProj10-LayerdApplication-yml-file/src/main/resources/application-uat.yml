@@ -1,0 +1,14 @@
+#DataSource Config
+spring: 
+ datasource: 
+   driver-class-name: oracle.jdbc.driver.OracleDriver
+   url: jdbc:oracle:thin:@localhost:1521:orcl
+   username: user1
+   password: 1234
+   oracleucp: 
+     initial-pool-size: 10
+     max-pool-size: 100
+     connection-wait-timeout: 60000
+
+#specify spring dataSource  type
+   type: oracle.ucp.jdbc.PoolDataSourceImpl

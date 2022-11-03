@@ -1,0 +1,7 @@
+#properties file info 
+com: 
+ nt: 
+   cid: 101
+   cname: Raja 
+   addrs: Hyd
+   billAmt: 1500 

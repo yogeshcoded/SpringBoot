@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql:///student
+    dbcp2:
+      min-idel: '10'
+      max-wait-mills: '60000'
+      max-total: '100'
+    type: org.apache.commons.dbcp2.BasicDataSource
+    password: '1234'

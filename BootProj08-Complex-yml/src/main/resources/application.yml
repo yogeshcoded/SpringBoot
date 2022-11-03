@@ -1,0 +1,32 @@
+# basic properties
+org: 
+ nt: 
+  eid: 105
+  ename: Raja
+  
+  #Arrays properties
+  favColors: 
+   - red
+   - blue
+   - cyan
+   
+   #List collection 
+  nicknames: 
+    - chinna
+    - munna
+    - bujji
+    - kanna
+    
+    #Set collection 
+  mobileNo: 
+   - 7777777777
+   - 8888888888
+   - 999999999
+   
+   #Map Collection
+  idDetails: 
+    pan: 785422
+    aadhar: 85526
+    voterid: 254987
+   
+     

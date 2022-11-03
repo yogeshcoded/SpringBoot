@@ -1,0 +1,4 @@
+#activate property
+spring: 
+ profiles: 
+   active: uat
