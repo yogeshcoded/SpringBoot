@@ -1,0 +1,58 @@
+#activate property
+spring: 
+ profiles: 
+   active: dev
+---  
+ spring: 
+  profiles: dev
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql:///student
+    dbcp2:
+      min-idel: '10'
+      max-wait-mills: '60000'
+      max-total: '100'
+    #Datasource type (apache dbcp2)
+    type: org.apache.commons.dbcp2.BasicDataSource
+    password: '1234'
+---
+spring: 
+ profiles: prod
+ 
+ datasource: 
+   driver-class-name: oracle.jdbc.driver.OracleDriver
+   url: jdbc:oracle:thin:@localhost:1521:orcl
+   username: user1
+   password: 1234
+---  
+spring: 
+ profiles: test
+ datasource: 
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql:///student
+   username: root
+   password: 1234
+
+c3p0: 
+  minsize: 10
+  maxsize: 100
+---
+spring: 
+ profiles: uat
+ datasource: 
+   driver-class-name: oracle.jdbc.driver.OracleDriver
+   url: jdbc:oracle:thin:@localhost:1521:orcl
+   username: user1
+   password: 1234
+   oracleucp: 
+     initial-pool-size: 10
+     max-pool-size: 100
+     connection-wait-timeout: 60000
+
+#specify spring dataSource  type
+   type: oracle.ucp.jdbc.PoolDataSourceImpl
+    
+ 
+   
