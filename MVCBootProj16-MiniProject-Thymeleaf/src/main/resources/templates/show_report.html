@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="container-fluid">
+<div th:if="${!empsList.empty}">
+	<h1 style="color: red; text-align: center;">Employee Report</h1>
+	<table class="table table-hover w-75 m-auto">
+		<tr>
+			<th>EMPNO</th>
+			<th>ENAME</th>
+			<th>JOB</th>
+			<th>SALARY</th>
+			<th>DEPTNO</th>
+			<th>ACTIONS</th>
+		</tr>
+
+		<tr th:each="emp:${empsList}">
+			<td><span th:text="${emp.empno}"></span></td>
+			<td><span th:text="${emp.ename}"></span></td>
+			<td><span th:text="${emp.job}"></span></td>
+			<td><span th:text="${emp.sal}"></span></td>
+			<td><span th:text="${emp.deptno}"></span></td>
+			<td><a th:href="@{/employee/emp_edit(no=${emp.empno})}"><img	th:src="@{/images/edit.jpg}" width="30px" height="30px"></a> 
+			<a th:href="@{/employee/emp_delete(no=${emp.empno})}" onclick="return confirm('are you sure to delete emp')">
+			<img	th:src="@{/images/delete.jpg}" width="30px" height="30px"></a>
+			</td>
+	
+		</tr>
+
+
+	</table>
+</div>
+<div th:if="${empsList.empty}">
+	<h1 style="color: red; text-align: center;">Employee Not Found</h1>
+</div>
+
+<h2 style="color: green; text-align: center;" th:text="${resultMsg}"></h2>
+<div>
+	<br> <a th:href="@{/employee/emp_add}"><img alt="not load" th:src="@{/images/add.jpg}" width="30px" height="30px">Add Employee</a>
+	
+		 &nbsp;&nbsp;&nbsp;
+		 <a th:href="@{/employee/}"><img alt="not load" th:src="@{/images/home.jpg}" width="40px" height="40px">Home</a>
+		</div>
+</div>
+</html>

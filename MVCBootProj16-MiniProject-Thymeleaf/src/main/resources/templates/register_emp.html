@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+<form th:action="@{/employee/emp_add}" th:object="${emp}" method="post">
+<table class="table table-hover">
+<tr>
+<td>Employee Name::</td>
+<td><input type="text" th:field="*{ename}"/></td>
+</tr>
+<tr>
+<td>Employee job::</td>
+<td><input type="text" th:field="*{job}"/></td>
+</tr>
+<tr>
+<td>Employee sal::</td>
+<td><input type="text" th:field="*{sal}"/></td>
+</tr>
+<tr>
+<td>Employee deptno::</td>
+<td><input type="text" th:field="*{deptno}"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="Submit"/></td>
+<td><input type="reset" value="cancel"/></td>
+</tr>
+</table>
+</form>
